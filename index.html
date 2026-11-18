@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="대학생을 위한 간단한 점심 메뉴 추천 웹앱. 음식 종류를 골라 메뉴를 추천받고 마음에 드는 메뉴를 저장하세요.">
+  <title>오늘 뭐 먹지? | 메뉴 추천</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="site-wrap">
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="오늘 뭐 먹지? 처음 화면"><span class="brand-icon" aria-hidden="true">🍽️</span><span>오늘 뭐 먹지?</span></a>
+      <span class="top-caption">대학생 메뉴 고민 해결 프로젝트</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="mainTitle">
+        <div class="eyebrow">간단한 점심 메뉴 추천</div>
+        <h1 id="mainTitle">점심 메뉴 고민,<br><span>이제 간단하게!</span></h1>
+        <p>오늘 먹을 음식을 고르기 어렵다면, 음식 종류를 선택하고 추천 버튼을 눌러봐.</p>
+      </section>
+
+      <div class="content-grid">
+        <section class="panel recommend-panel" aria-labelledby="recommendTitle">
+          <div class="panel-heading">
+            <span class="step-number">01</span>
+            <div><h2 id="recommendTitle">오늘의 메뉴 추천</h2><p>음식 종류만 고르면 메뉴 하나를 추천해 줘.</p></div>
+          </div>
+
+          <label for="categorySelect" class="field-label">어떤 음식이 먹고 싶어?</label>
+          <select id="categorySelect" class="select" aria-describedby="categoryHint">
+            <option value="전체">전체 메뉴</option>
+            <option value="한식">한식</option>
+            <option value="중식">중식</option>
+            <option value="일식">일식</option>
+            <option value="양식">양식</option>
+            <option value="분식">분식</option>
+          </select>
+          <p id="categoryHint" class="field-hint">카테고리를 바꾸면 이전 추천은 초기화돼.</p>
+
+          <button id="recommendBtn" class="btn btn-primary" type="button">메뉴 추천받기 <span aria-hidden="true">→</span></button>
+
+          <div id="resultArea" class="result-area" aria-live="polite" aria-atomic="true">
+            <div id="emptyResult" class="result-empty">
+              <div class="empty-emoji" aria-hidden="true">🍚</div>
+              <p class="empty-title">오늘은 뭘 먹을까?</p>
+              <p class="empty-description">위에서 음식 종류를 선택해 메뉴를 추천받아 봐.</p>
+            </div>
+            <div id="resultContent" class="result-content" hidden>
+              <p class="result-eyebrow">오늘의 추천 메뉴</p>
+              <div class="result-symbol" id="menuEmoji" aria-hidden="true">🍽️</div>
+              <p id="menuCategory" class="category-tag"></p>
+              <h3 id="menuName" class="menu-name"></h3>
+              <p class="result-help">마음에 들면 저장하고, 아니라면 다시 추천받아 봐.</p>
+              <div class="result-actions">
+                <button id="retryBtn" type="button" class="btn btn-outline">다시 추천</button>
+                <button id="favoriteBtn" type="button" class="btn btn-secondary">☆ 마음에 들어요</button>
+              </div>
+            </div>
+          </div>
+          <p id="statusText" class="status-text" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel favorites-panel" aria-labelledby="favoritesTitle">
+          <div class="panel-heading">
+            <span class="step-number">02</span>
+            <div><h2 id="favoritesTitle">내가 저장한 메뉴</h2><p>다음에 고민될 때 다시 확인할 수 있어.</p></div>
+          </div>
+          <div class="saved-summary"><span>저장한 메뉴</span><strong id="favoritesCount">0개</strong></div>
+          <div id="favoritesEmpty" class="favorite-empty">
+            <span aria-hidden="true">☆</span>
+            <p>아직 저장한 메뉴가 없어.</p>
+            <small>추천 메뉴에서 ‘마음에 들어요’를 눌러봐.</small>
+          </div>
+          <ul id="favoritesList" class="favorites-list" aria-label="저장한 메뉴 목록" hidden></ul>
+          <p class="save-note">※ 저장한 메뉴는 현재 브라우저에만 보관돼. 다른 기기와 자동으로 연동되지는 않아.</p>
+          <p id="storageNotice" class="storage-warning" role="status" hidden>브라우저 저장 기능을 사용할 수 없어. 새로고침하면 저장한 메뉴가 사라질 수 있어.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">2026-2 프로젝트관리론 · MVP 실습 · 예시 메뉴 목록을 활용한 랜덤 추천</footer>
+  </div>
+</body>
+</html>
