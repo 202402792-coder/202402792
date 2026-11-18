@@ -21,7 +21,7 @@
 **판단 방법:** 선택·추천·재추천·저장·삭제·새로고침을 직접 조작해 기대 결과와 실제 결과를 비교한다. 확인하지 못한 항목은 검증 문서에 미확인으로 표시한다.
 
 ## 5. 주요 산출물
-- 실제 실행 가능한 웹앱: `index.html`, `styles.css`, `script.js`
+- 실제 실행 가능한 웹앱: `index.html` (HTML·CSS·JavaScript를 한 파일에 포함)
 - 프로젝트관리 문서 7개: `01_charter.md` ~ `07_check.md`
 - 시연 영상 1개(실제 실행 화면 중심)
 - GitHub 저장소 URL과 GitHub Pages 웹앱 URL(배포 완료 후 확정)
